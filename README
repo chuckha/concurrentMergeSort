@@ -1,0 +1,5 @@
+A really silly sorting algorithm in go:
+
+This is a merge sort where the splitting and the merging happen in different goroutines
+
+Sort splits the incoming array into two pieces until it gets down to one item
