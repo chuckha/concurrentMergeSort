@@ -28,7 +28,6 @@ func NewSorter() *Sorter {
 	return sorter
 }
 
-// gets called 1+nlgn
 func (s *Sorter) Sort(x []int) {
 	//	fmt.Println(fmt.Sprintf("incoming x: %v", x))
 	//	fmt.Println(fmt.Sprintf("using this slice: x[:%v/2] or x[:%v]", len(x), len(x)/2))
@@ -44,9 +43,6 @@ func (s *Sorter) Sort(x []int) {
 	s.Sort(x[len(x)/2:])
 }
 
-// runges mergeArrays 1+nlgn times
-// which means this is (n+m) * (1+nlgn)
-// n + m*n*lgn+m+n^2lgn=O(n^2lgn)
 func (s *Sorter) merge() {
 	var next []int
 	for {
@@ -62,7 +58,6 @@ func (s *Sorter) merge() {
 	}
 }
 
-// O(n+m)
 func mergeArrays(a, b []int) []int {
 	merged := make([]int, len(a)+len(b))
 	var ai, bi, mi int
